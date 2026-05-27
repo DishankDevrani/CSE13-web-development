@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.Tech Budget Tracker</title>
+    <style>
+        /* Simple, clean styling to make it look presentable */
+        body { font-family: Arial, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; display: flex; justify-content: center; }
+        .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+        h2, h3 { text-align: center; color: #333; }
+        .balance-box { display: flex; justify-content: space-between; background: #eef2f3; padding: 10px; border-radius: 5px; margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group select { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        button { width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; }
+        button:hover { background-color: #218838; }
+        ul { list-style-type: none; padding: 0; max-height: 200px; overflow-y: auto; }
+        li { display: flex; justify-content: space-between; background: #f9f9f9; padding: 8px; margin-bottom: 5px; border-radius: 4px; border-left: 5px solid #ccc; }
+        li.income { border-left-color: #28a745; }
+        li.expense { border-left-color: #dc3545; }
+        .delete-btn { color: #dc3545; cursor: pointer; font-weight: bold; border: none; background: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Budget Tracker</h2>
+    
+    <div class="balance-box">
+        <div>
+            <h4>Balance</h4>
+            <p id="balance">₹0.00</p>
+        </div>
+        <div>
+            <h4>Income</h4>
+            <p id="income-total" style="color: #28a745;">₹0.00</p>
+        </div>
+        <div>
+            <h4>Expense</h4>
+            <p id="expense-total" style="color: #dc3545;">₹0.00</p>
+        </div>
+    </div>
+
+    <h3>Add New Transaction</h3>
+    <div class="form-group">
+        <label for="text">Description</label>
+        <input type="text" id="text" placeholder="e.g., Books, Pocket Money">
+    </div>
+    <div class="form-group">
+        <label for="amount">Amount (₹)</label>
+        <input type="number" id="amount" placeholder="Enter amount">
+    </div>
+    <div class="form-group">
+        <label for="type">Type</label>
+        <select id="type">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+        </select>
+    </div>
+    <button onclick="addTransaction()">Add Transaction</button>
+
+    <h3>History</h3>
+    <ul id="list"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
