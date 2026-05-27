@@ -1,0 +1,58 @@
+/* Reset body to allow full screen coverage */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: red; /* Matches the container color to avoid white edges */
+  font-family: sans-serif;
+}
+
+/* The red wrapper stretching across the whole screen */
+.form-container {
+  background-color: red;
+  padding: 40px 20px;
+  width: 100%;
+  min-height: 100vh; /* Forces it to cover the entire height of the screen */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Heading styles */
+.form-container h2 {
+  color: white;
+  font-size: 3.5rem; /* Made it a bit bigger to look great on a wide layout */
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-weight: normal;
+}
+
+/* Dark full-width inputs stretching edge-to-edge */
+.form-container input {
+  display: block;
+  width: 100%;
+  background-color: #333333; /* Dark grey background */
+  color: #888888; /* Grey text color */
+  border: none;
+  padding: 15px;
+  margin-bottom: 25px; /* Adds space between the long input bars */
+  box-sizing: border-box;
+  font-size: 1.1rem;
+}
+
+/* Placeholder text styling inside inputs */
+.form-container input::placeholder {
+  color: #777777;
+}
+
+/* Custom button styles centered at the bottom */
+.form-container button {
+  background-color: aqua;
+  color: red;
+  border: 5px solid green;
+  width: 200px;
+  padding: 8px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 40px auto 0 auto;
+  display: block;
+}
