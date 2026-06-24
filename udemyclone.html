@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Udemy Clone</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f7f9fa;
+}
+
+.header{
+    background:#a6d9dd;
+    text-align:center;
+    padding:12px;
+    font-weight:bold;
+}
+
+.navbar{
+    background:white;
+    padding:20px;
+    box-shadow:0px 2px 5px lightgray;
+}
+
+.logo{
+    font-size:35px;
+    font-weight:bold;
+    color:#5624d0;
+}
+
+.search{
+    width:60%;
+    padding:12px;
+    border-radius:30px;
+    border:1px solid gray;
+    margin-left:20px;
+}
+
+.cart{
+    float:right;
+    font-size:22px;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+}
+
+.title{
+    margin-top:40px;
+    font-size:40px;
+    font-weight:bold;
+}
+
+.cards{
+    margin-top:30px;
+}
+
+.course{
+    width:250px;
+    background:white;
+    display:inline-block;
+    margin:10px;
+    vertical-align:top;
+    box-shadow:0px 0px 10px lightgray;
+}
+
+.course img{
+    width:250px;
+    height:150px;
+}
+
+.course h3{
+    padding:10px;
+}
+
+.course p{
+    padding-left:10px;
+}
+
+button{
+    margin:10px;
+    padding:10px;
+    background:#5624d0;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#3f1ca8;
+}
+
+.price{
+    font-weight:bold;
+    color:green;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    2 days left! Courses starting from ₹399
+</div>
+
+<div class="navbar">
+
+    <span class="logo">Udemy</span>
+
+    <input
+    type="text"
+    class="search"
+    placeholder="Search for anything">
+
+    <span class="cart">
+        Cart :
+        <span id="cart">0</span>
+    </span>
+
+</div>
+
+<div class="container">
+
+    <div class="title">
+        What to learn next
+    </div>
+
+    <h2>Recommended For You</h2>
+
+    <div id="courses" class="cards"></div>
+
+</div>
+
+<script>
+
+let cartCount = 0;
+
+let courses = [
+
+{
+title:"Java Programming",
+price:"₹499",
+image:"https://picsum.photos/250/150?1"
+},
+
+{
+title:"Python Development",
+price:"₹399",
+image:"https://picsum.photos/250/150?2"
+},
+
+{
+title:"C++ Masterclass",
+price:"₹299",
+image:"https://picsum.photos/250/150?3"
+},
+
+{
+title:"Web Development",
+price:"₹599",
+image:"https://picsum.photos/250/150?4"
+},
+
+{
+title:"Data Structures",
+price:"₹699",
+image:"https://picsum.photos/250/150?5"
+}
+
+];
+
+function displayCourses(){
+
+let output = "";
+
+for(let course of courses){
+
+output +=
+
+"<div class='course'>" +
+
+"<img src='" + course.image + "'>" +
+
+"<h3>" + course.title + "</h3>" +
+
+"<p class='price'>" + course.price + "</p>" +
+
+"<button onclick='addToCart()'>Add To Cart</button>" +
+
+"</div>";
+
+}
+
+document.getElementById("courses").innerHTML = output;
+
+}
+
+function addToCart(){
+
+cartCount++;
+
+document.getElementById("cart").innerHTML = cartCount;
+
+}
+
+displayCourses();
+
+</script>
+
+</body>
+</html>
