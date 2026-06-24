@@ -1,0 +1,11 @@
+.footer {
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: auto;
+}
+
+.footer__inner {
+  padding: 22px 24px;
+  font-size: 13px;
+  text-align: center;
+}

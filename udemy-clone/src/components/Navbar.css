@@ -1,0 +1,137 @@
+.nav {
+  background: var(--ink);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 64px;
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.nav__brand svg {
+  color: var(--amber);
+}
+
+.nav__search {
+  flex: 1;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 9px 16px;
+}
+
+.nav__search input {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--white);
+  font-size: 14px;
+  width: 100%;
+}
+
+.nav__search input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.nav__search-icon {
+  color: rgba(255, 255, 255, 0.6);
+  flex-shrink: 0;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-left: auto;
+  color: var(--white);
+  font-size: 14.5px;
+  font-weight: 500;
+}
+
+.nav__cart {
+  position: relative;
+  display: flex;
+}
+
+.nav__cart-badge {
+  position: absolute;
+  top: -7px;
+  right: -9px;
+  background: var(--amber);
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 999px;
+  min-width: 17px;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+}
+
+.nav__menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  margin-left: auto;
+}
+
+.nav__mobile {
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+  padding-bottom: 16px;
+  color: var(--white);
+}
+
+.nav__mobile form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 9px 12px;
+}
+
+.nav__mobile input {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--white);
+  width: 100%;
+}
+
+@media (max-width: 760px) {
+  .nav__search,
+  .nav__links {
+    display: none;
+  }
+  .nav__menu-btn {
+    display: block;
+  }
+  .nav__mobile {
+    display: flex;
+  }
+}
